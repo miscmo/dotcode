@@ -2,7 +2,9 @@ all : build
 
 
 build:
-	g++ -o weak_ptr weak_ptr.cpp
+	g++ -o WeakPtr WeakPtr.cpp
+	g++ -o MyString MyString.cpp
 
 clean:
-	rm -fr weak_ptr
+	rm -fr WeakPtr 
+	rm -fr MyString 
