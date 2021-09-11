@@ -14,13 +14,26 @@
 
 ## STL
 
-- [x] [一个最简单的空间配置器](cpp/SimpleAlloc.cpp)：
+- [x] [一个最简单的空间配置器](cpp/SimpleAlloc.cpp)
 
 ## 算法和数据结构
 
 - [x] [KMP算法](algorithm/KMP.cpp)
-- [x] [二分查找](algorithm/BinSearch.cpp)
+- [x] [全排列](algorithm/FullPermutation.cpp)
+- [x] [组合](algorithm/Combinatorial.cpp)
+- [x] [字符串翻转](algorithm/ReverseStr.cpp)
+
 - [x] [二叉树遍历递归实现](algorithm/BinTree/Travel.cpp)
 - [x] [二叉树遍历循环实现](algorithm/BinTree/TravelLoop.cpp)
+
+- [ ] [快速排序](algorithm/QuickSort.cpp)
+- [ ] [归并排序](algorithm/)
+- [ ] [希尔排序](algorithm/ShellSort.cpp)
+- [ ] [堆排序](algorithm/HeapSort.cpp)
+
+- [x] [二分查找](algorithm/BinSearch.cpp)
+
+- [ ] [DFS]()
+- [ ] [BFS]()
 
 ## 设计模式
