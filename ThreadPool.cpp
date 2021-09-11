@@ -13,6 +13,13 @@ using namespace std;
 
 #define THREADPOOL_MAX_NUM 16
 
+/**
+ * 线程池需要考虑的问题：
+ *  1. 虚假唤醒（notify_one, while-loop）
+ *  2. 任务队列加锁 
+ *  3. 任务优先级（使用优先级队列实现）
+ */
+
 class ThreadPool{
 public:
     enum taskPriorityE { level0, level1, level2, };

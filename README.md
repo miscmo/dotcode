@@ -42,10 +42,10 @@ SYS
 
 排序
 
-- [ ] [快速排序](algorithm/QuickSort.cpp)
-- [ ] [归并排序](algorithm/)
-- [ ] [希尔排序](algorithm/ShellSort.cpp)
-- [ ] [堆排序](algorithm/HeapSort.cpp)
+- [x] [快速排序](algorithm/Sort/QuickSort.cpp)
+- [x] [归并排序](algorithm/Sort/MergeSort.cpp)
+- [ ] [希尔排序](algorithm/Sort/ShellSort.cpp)
+- [ ] [堆排序](algorithm/Sort/HeapSort.cpp)
 
 查找
 
