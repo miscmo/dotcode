@@ -45,9 +45,9 @@ func (l *SlidingWindowLimiter) Take() bool {
 
 	now := time.Now()
 
-	timeoutOffset := -1
+	//timeoutOffset := -1
 
-	for i, ts := range l.windows {
+	for _, ts := range l.windows {
 		if ts.timestamp.Add(l.WinDuration).After(now) {
 
 		}

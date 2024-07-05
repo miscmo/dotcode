@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/go.iml" filepath="$PROJECT_DIR$/.idea/go.iml" />
+      <module fileurl="file://$USER_HOME$/gitwoa/safety_go_proj/.idea/safety_go_proj.iml" filepath="$USER_HOME$/gitwoa/safety_go_proj/.idea/safety_go_proj.iml" />
     </modules>
   </component>
 </project>

@@ -4,11 +4,17 @@ import "fmt"
 
 func main() {
 
-	v := 123
+	// 1.
+	//v := 123
+	//
+	//ModInterface(&v)
+	//fmt.Println(v)
 
-	ModInterface(&v)
 
-	fmt.Println(v)
+	// 2.
+	var x *int = nil
+
+	EmptyInterface(x)
 }
 
 func ModInterface(value interface{}) {
@@ -21,4 +27,13 @@ func ModInterface(value interface{}) {
 
 	*vv = 456
 
+}
+
+func EmptyInterface(x interface{}) {
+	if x == nil {
+		fmt.Printf("empty interface")
+		return
+	} else {
+		fmt.Printf("non-empty interface")
+	}
 }

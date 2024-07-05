@@ -18,7 +18,15 @@ type Person struct {
 func main() {
 
 	//BaseReflect()
-	ReflectGC()
+	//ReflectGC()
+	//Base2()
+	//Base3()
+	//BaseStruct()
+	//ForEachAudit(AuditInfo{})
+	//
+	//CreatAudit(AuditInfo{})
+
+	SetVal()
 }
 
 type QukuAuditInfo struct {
@@ -53,6 +61,7 @@ type AuditInfo struct {
 	GotTime   string `bson:"got_time"`
 	HitAlgo   string `bson:"hit_algo"`
 	Marks     string `bson:"marks"`
+	SpoolingInfo   SpoolingInfo `bson:"spooling_info"`
 }
 
 type SpoolingInfo struct {
@@ -113,4 +122,100 @@ func BaseReflect() {
 	fmt.Printf("%+v\n", s)
 
 
+}
+
+func Base2() {
+	var s string = "AB"
+
+	fmt.Println(reflect.TypeOf(s[0]))
+	fmt.Println(reflect.TypeOf(s[0]).Kind())
+
+	for _, v := range s {
+		fmt.Println(reflect.TypeOf(v), reflect.TypeOf(v).Kind())
+	}
+
+	var v interface{} = 1
+	var s2 uint8 = 1
+
+	temp1 := int(s2)
+	temp2 := v.(int)
+
+	fmt.Println(temp1, temp2)
+	fmt.Println(reflect.TypeOf(temp1).Kind(), reflect.TypeOf(temp2).Kind())
+}
+
+type MyM struct {
+	i int64
+}
+
+type MyN struct {
+	i int64
+}
+func Base3() {
+
+	m := MyM{i: 12}
+
+	var n MyN
+
+	n = MyN(m)
+
+	fmt.Println(n, m)
+	fmt.Println(reflect.TypeOf(n), reflect.TypeOf(m))
+	fmt.Println(reflect.TypeOf(n).Kind(), reflect.TypeOf(m).Kind())
+
+	var k interface{} = "s"
+	l, ok := k.(int)
+
+
+	fmt.Println(ok)
+	fmt.Println(reflect.TypeOf(k).Kind(), reflect.TypeOf(l).Kind())
+}
+
+func BaseStruct() {
+	kelu := Person{"kelu", 25}
+
+	t := reflect.TypeOf(kelu)
+
+	n := t.NumField()
+	for i := 0; i < n; i++ {
+		fmt.Println(t.Field(i).Name)
+		fmt.Println(t.Field(i).Type)
+	}
+}
+
+func ForEachAudit(info AuditInfo) {
+
+	typ := reflect.TypeOf(info)
+	val := reflect.ValueOf(info)
+
+	for i := 0; i < typ.NumField(); i++ {
+		fmt.Printf("%v: %v\n", typ.Field(i).Name, val.Field(i).Interface())
+	}
+
+}
+
+func CreatAudit(info AuditInfo) AuditInfo {
+	st := reflect.TypeOf(info)
+	//st = st.Elem() 	// panic
+
+	vl := reflect.New(st)
+
+	fmt.Printf("%v", vl)
+
+	return AuditInfo{}
+}
+
+func SetVal() {
+	var x float64 = 3.4
+	v := reflect.ValueOf(x)
+	// panic: reflect: reflect.flag.mustBeAssignable using addressable value
+	v.SetFloat(7.1)
+
+	p := reflect.ValueOf(&x)
+	// panic: reflect: reflect.flag.mustBeAssignable using addressable value
+	p.SetFloat(7.1)
+
+	e := reflect.ValueOf(&x).Elem()
+	// OK
+	e.SetFloat(7.1)
 }

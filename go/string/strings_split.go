@@ -6,22 +6,26 @@ import (
 )
 
 func main() {
-	test := ""
+	// test := ""
 
-	test_list := strings.Split(test, ",")
+	// test_list := strings.Split(test, ",")
 
-	fmt.Println(test_list)	// []
+	// fmt.Println(test_list)	// []
 
-	ret := SplitTextSegment("hello,世界热名号解耦", 5, 1, 10)
+	// ret := SplitTextSegment("hello,世界热名号解耦", 5, 1, 10)
 
-	ret1 := SplitTextSegmentV1("hello,世界热名号解耦", 5, 1, 10)
+	// ret1 := SplitTextSegmentV1("hello,世界热名号解耦", 5, 1, 10)
 
+	// strings.Compare()
 
-	strings.Compare()
+	// fmt.Printf("ret: %+v", ret)
+	// fmt.Printf("ret: %+v", ret1)
 
-	fmt.Printf("ret: %+v", ret)
-	fmt.Printf("ret: %+v", ret1)
+	str := "test 123   32121 	4323	4r3232	32"
 
+	strfields := strings.Fields(str)
+
+	fmt.Println(strfields)
 }
 
 func SplitTextSegmentV1(src string, checkLimit, checkOffset, reportLimit int) []string {
